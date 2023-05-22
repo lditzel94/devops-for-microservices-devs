@@ -1,0 +1,15 @@
+# /home/luciano/Documents/AWS
+spring:
+  datasource:
+    url: jdbc:mysql://docker-mysql:3306/mydb
+    username: root
+    password: test1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+server:
+  port: 9091
