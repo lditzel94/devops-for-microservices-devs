@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udemy-coupon-service
+  labels:
+    app: udemy-coupon-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udemy-coupon-service
+  template:
+    metadata:
+      name: udemy-coupon-service
+      labels:
+        app: udemy-coupon-service
+    spec:
+      containers:
+        - name: udemy-coupon-service
+          image: lditzel94/udemy-coupon-service
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always

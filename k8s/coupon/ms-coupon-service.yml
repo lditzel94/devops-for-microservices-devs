@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: udemy-coupon-service
+  labels:
+    app: udemy-coupon-service
+spec:
+  selector:
+    app: udemy-coupon-service
+  ports:
+    - protocol: TCP
+      port: 9091
+      targetPort: 9091
+      nodePort: 30288
+  type: NodePort

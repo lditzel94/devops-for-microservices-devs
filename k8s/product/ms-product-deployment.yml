@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udemy-product-service
+  labels:
+    app: udemy-product-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udemy-product-service
+  template:
+    metadata:
+      name: udemy-product-service
+      labels:
+        app: udemy-product-service
+    spec:
+      containers:
+        - name: udemy-product-service
+          image: lditzel94/udemy-product-service
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
